@@ -6,11 +6,6 @@ class CollecteurAmazon(CollecteurBase):
         super().__init__("Amazon")
     
     def get_prix_produit(self, produit_info):
-        """
-        Simulation du scraping Amazon
-        En réalité : requests.get(url) + BeautifulSoup
-        """
-        # Prix de base selon produit (simulation)
         prix_base = {
             "iPhone 13": 679,
             "Samsung Galaxy S23": 749,
@@ -20,8 +15,6 @@ class CollecteurAmazon(CollecteurBase):
         }
         
         prix_actuel = prix_base.get(produit_info["nom"], 500)
-        
-        # 20% de chance d'avoir une promotion
         en_promo = random.random() < 0.2
         
         if en_promo:
@@ -33,7 +26,6 @@ class CollecteurAmazon(CollecteurBase):
             promotion = None
             prix_final = prix_actuel
         
-        # Disponibilité (95% des cas)
         disponible = random.random() < 0.95
         
         return {
