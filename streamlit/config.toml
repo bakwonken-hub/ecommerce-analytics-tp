@@ -1,2 +1,8 @@
-[runner]
-install_dependencies = false
+[theme]
+base = "light"
+
+[server]
+maxUploadSize = 10
+
+[browser]
+gatherUsageStats = false
