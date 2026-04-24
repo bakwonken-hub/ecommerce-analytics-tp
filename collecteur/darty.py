@@ -1,4 +1,3 @@
-# collecteur/darty.py
 from .base import CollecteurBase
 import random
 
@@ -16,8 +15,6 @@ class CollecteurDarty(CollecteurBase):
         }
         
         prix_actuel = prix_base.get(produit_info["nom"], 500)
-        
-        # 25% de chance de promotion Darty
         en_promo = random.random() < 0.25
         
         if en_promo:
